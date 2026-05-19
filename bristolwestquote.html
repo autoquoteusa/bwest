@@ -70,44 +70,6 @@
             70% { box-shadow: 0 0 0 15px rgba(40, 167, 69, 0); }            
             100% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0); }        
         }
- /* --- CLOSEABLE POPUP --- */
-        #jnj-forced-popup {
-            display: flex; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.75); z-index: 10000;
-            justify-content: center; align-items: center; padding: 20px;
-            pointer-events: auto; 
-            transition: opacity 0.3s ease;
-        }
-        .popup-box {
-            background: #fff; padding: 40px 25px; border-radius: 20px;
-            text-align: center; max-width: 450px; width: 100%;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.5); position: relative; z-index: 10001;
-        }
-        
-        /* The X Close Button */
-        .close-popup {
-            position: absolute; top: 15px; right: 20px;
-            font-size: 28px; color: #999; cursor: pointer;
-            transition: color 0.2s;
-            line-height: 1;
-        }
-        .close-popup:hover { color: #333; }
-
-        .gecko-img {
-            width: 100%; max-width: 320px; height: auto; margin-bottom: 20px;
-            animation: smoothFloat 3s infinite ease-in-out;
-        }
-        @keyframes smoothFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        .btn-call-popup {
-            background-color: #28a745; color: white; padding: 18px 30px; border-radius: 50px;
-            font-weight: 800; text-transform: uppercase; text-decoration: none; display: flex;
-            align-items: center; justify-content: center; gap: 10px; font-size: 1.4rem;
-            animation: pulse 2s infinite; margin-top: 10px;
-        }
-
 
         /* --- HEADER --- */        
         header { background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); box-shadow: 0 2px 20px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; padding: 15px 0; }        
@@ -372,20 +334,6 @@
             <a href="privacy.html" style="color: var(--primary-color); font-weight: bold; text-decoration: underline;">Privacy Policy</a> | <a href="terms.html" style="color: var(--primary-color); font-weight: bold; text-decoration: underline;">Terms</a>
             <div></div>
             </p> 
-<div id="jnj-forced-popup">
-        <div class="popup-box">
-            <span class="close-popup" onclick="closePopup()">&times;</span>
-            
-            <img src="logo-insurance-768x432.jpg" alt="Geico Gecko Logo" class="gecko-img">
-            
-            <h2 style="color:#003366; margin-bottom:10px;">Licensed Agents Available</h2>
-            <p style="color:#555; margin-bottom:20px;">Licensed agents are standing by to lock in your lowest rate. Please call to unlock your quotes!</p>
-            
-            <a href="tel:8003194951" class="btn-call-popup">
-                <i class="fas fa-phone-alt"></i> (800) 276-1652
-            </a>
-
-
            
         </div>    
     </div>
@@ -395,29 +343,6 @@
             <i class="fas fa-phone-alt"></i> CALL FOR FREE QUOTE        
         </a>    
     </div>
- <script>
-        // Function to smoothly close the popup and remove the blur
-        function closePopup() {
-            var popup = document.getElementById('jnj-forced-popup');
-            var content = document.getElementById('content-wrapper');
-            
-            popup.style.opacity = '0';
-            setTimeout(function() {
-                popup.style.display = 'none';
-                content.classList.remove('is-blurred');
-            }, 300); // Wait for the fade out to finish
-        }
-
-        // Allow users to close the popup with the Escape key
-        window.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') {
-                closePopup();
-            }
-        });
-
-        // Disable right-click to prevent users from deleting the element via Inspect
-        document.addEventListener('contextmenu', event => event.preventDefault());
-    </script>
 
 </body>
 </html>
